@@ -10,8 +10,11 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: 'https://katalon-demo-cura-herokuapp.com/',
+    baseURL: 'https://katalon-demo-cura.herokuapp.com',
     headless: false,
+    launchOptions: {
+      executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    },
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },
