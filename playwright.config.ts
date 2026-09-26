@@ -10,7 +10,7 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: 'https://practice.expandtesting.com/login',
+    baseURL: 'https://katalon-demo-cura-herokuapp.com/',
     headless: false,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -23,3 +23,4 @@ export default defineConfig({
     },
   ],
 });
+
