@@ -10,6 +10,7 @@ test('01 - Login correcto', async ({ page }) => {
 
   await expect(page).toHaveURL(/#appointment/);
   await expect(page.getByRole('heading', { name: 'Make Appointment' })).toBeVisible();
+  await page.screenshot({ path: 'evidencias/test-01-login-correcto.png', fullPage: true });
 });
 
 test('02 - Login incorrecto parametrizado con for...of', async ({ page }) => {
@@ -29,6 +30,8 @@ test('02 - Login incorrecto parametrizado con for...of', async ({ page }) => {
       page.getByText('Login failed! Please ensure the username and password are valid.')
     ).toBeVisible();
   }
+
+  await page.screenshot({ path: 'evidencias/test-02-login-incorrecto.png', fullPage: true });
 });
 
 test('03 - Mostrar formulario de login', async ({ page }) => {
@@ -37,6 +40,7 @@ test('03 - Mostrar formulario de login', async ({ page }) => {
   await expect(page.locator('#txt-username')).toBeVisible();
   await expect(page.locator('#txt-password')).toBeVisible();
   await expect(page.locator('#btn-login')).toBeVisible();
+  await page.screenshot({ path: 'evidencias/test-03-formulario-login.png', fullPage: true });
 });
 
 test('04 - Crear una cita', async ({ page }) => {
@@ -54,4 +58,5 @@ test('04 - Crear una cita', async ({ page }) => {
   await page.locator('#btn-book-appointment').click();
 
   await expect(page.getByRole('heading', { name: 'Appointment Confirmation' })).toBeVisible();
+  await page.screenshot({ path: 'evidencias/test-04-cita-creada.png', fullPage: true });
 });
